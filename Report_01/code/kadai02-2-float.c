@@ -6,7 +6,7 @@
 
 float f(float);
 float sol();
-float trapezoid();
+float simpson(int);
 
 int main(void) {
     int i;

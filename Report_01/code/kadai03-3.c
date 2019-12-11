@@ -18,18 +18,21 @@ int main(void) {
 
 	euler(t, u, 0.1, STEP);
 
+    printf("ã‚ªã‚¤ãƒ©ãƒ¼æ³•\n");
     for (i = 0; i <= STEP; i++)
         printf("i = %2d, t = %2.16f, u = %2.16f, e = %2.16f\n", i, t[i], u[i], u[i] - us(t[i]));
 	printf("\n");
 
 	heun(t, u, 0.1, STEP);
 
+    printf("ãƒ›ã‚¤ãƒ³æ³•\n");
     for (i = 0; i <= STEP; i++)
         printf("i = %2d, t = %2.16f, u = %2.16f, e = %2.16f\n", i, t[i], u[i], u[i] - us(t[i]));
 	printf("\n");
 
 	runge_kutta(t, u, 0.1, STEP);
 
+    printf("ãƒ«ãƒ³ã‚²ãƒ»ã‚¯ãƒƒã‚¿æ³•\n");
     for (i = 0; i <= STEP; i++)
         printf("i = %2d, t = %2.16f, u = %2.16f, e = %2.16f\n", i, t[i], u[i], u[i] - us(t[i]));
 
@@ -41,12 +44,12 @@ double up(double t, double u) {
     return u;
 }
 
-// u‚Ì‰ðÍ‰ð
+// uã®è§£æžè§£
 double us(double t) {
     return exp(t);
 }
 
-// ƒIƒCƒ‰[–@
+// ã‚ªã‚¤ãƒ©ãƒ¼æ³•
 void euler(double *t, double *u, double h, int step) {
 	int i;
 
@@ -59,7 +62,7 @@ void euler(double *t, double *u, double h, int step) {
 	}
 }
 
-// ƒzƒCƒ“–@
+// ãƒ›ã‚¤ãƒ³æ³•
 void heun(double *t, double *u, double h, int step) {
 	int i;
 
@@ -75,7 +78,7 @@ void heun(double *t, double *u, double h, int step) {
 	}
 }
 
-// ƒ‹ƒ“ƒQEƒNƒbƒ^–@
+// ãƒ«ãƒ³ã‚²ãƒ»ã‚¯ãƒƒã‚¿æ³•
 void runge_kutta(double *t, double *u, double h, int step) {
 	int i;
 

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ja">
+	<head>
+		<meta charset="UTF-8">
+		<title>課題8</title>
+	</head>
+	<body>
+		<h1>課題8</h1>
+		<p>
+		RLC共振回路の微分方程式<br>
+		<img src="formula/RLCQ.png" align = "middle"><br>
+		を<font color="red">ホイン法</font>によって解くプログラムを作成せよ．
+		ここで，初期条件はt=0のとき，Q=Q0，dQ/dt=0とせよ．
+		パラメータは例えば，R=1[<img src="formula/kadai7-2.png" align = "texttop" width = "28" height = "20">]，
+		C=0.3[nF]，L=10[mH]，Q0=10[pC]程度の値を用いる．
+		（単位はそろえてあるので，そのままの数字（R=1,C=0.3,L=10,Q0=10を代入すればよい）
+		
+<li><b>平常点課題</b><br>
+				課題６と同様にワンステップ後の計算結果が正しいことを，手計算の結果と比較し確認せよ．
+			</li>
+<p>
+<b>課題8</b><br>
+
+<ol>
+				まず，R=0の場合について実行し，単振動することを確認せよ．
+				<ul>
+					<li>
+						R=0の場合は単振動になるように刻み幅dtを小さくし、正しく計算できるdtの値を決定せよ．他の計算でもこのdtの値を用いること。
+					</li>
+					</ul>
+			
+			<li>
+				Rの値を徐々に変えてゆき，<img src="formula/kadai7-3.png" align = "texttop" width = "87" height = "25"> あたりでどのようになるかを考えよ．
+			</li>
+			<li>
+				dQ/dtは電流Iを表しているので，これについてもプロットし，特徴を調べよ．
+			</li>
+		</ol>	
+		</p>
+			<hr>
+	</body>
+</html>

@@ -6,7 +6,7 @@
 
 double f(double);
 double sol();
-double trapezoid();
+double simpson(int);
 
 int main(void) {
     int i;
