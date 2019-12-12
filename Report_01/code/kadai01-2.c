@@ -3,9 +3,9 @@
 
 #define a 0.0
 #define b (M_PI / 6)
+#define SOLUTION (log(3) / 2)
 
 double f(double);
-double sol();
 double trapezoid(int);
 
 int main(void) {
@@ -13,7 +13,7 @@ int main(void) {
 
     for (i = 1; i <= 32; i *= 2) {
         double S = trapezoid(i);
-        printf("n = %2d, S = %2.16f, e = %2.16f\n", i, S, S - sol());
+        printf("n = %2d, S = %.16f, e = %.16f\n", i, S, S - SOLUTION);
     }
 
     return 0;
@@ -22,11 +22,6 @@ int main(void) {
 // f(x)
 double f(double x) {
     return 1 / cos(x);
-}
-
-// ‰ðÍ‰ð
-double sol() {
-    return log(3) / 2;
 }
 
 // ‘äŒ`ŒöŽ®

@@ -17,7 +17,7 @@ int main(void) {
 	runge_kutta(x, y, 0.5, STEP);
 
     for (i = 0; i <= STEP; i++)
-        printf("i = %2d, x = %2.16f, y = %2.16f, e = %2.16f\n", i, x[i], y[i], y[i] - ys(x[i]));
+        printf("i = %2d, x = %.16f, y = %.16f, e = %.16f\n", i, x[i], y[i], y[i] - ys(x[i]));
 
     return 0;
 }

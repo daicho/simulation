@@ -83,7 +83,7 @@
 
   \begin{tabular}{|l|l|}
     \hline
-    CPU & Intel Core i5-7400 @ 3.0GHz \\ \hline
+    CPU & Intel Core i5--7400 @ 3.0GHz \\ \hline
     メモリ & 8GB \\ \hline
     OS & Microsoft Windows 10 Home \\ \hline
     システム & 64bit \\ \hline
@@ -127,6 +127,16 @@ n = 32, S = 3.1414298931749753, e = -0.0001627604148178
 \end{lstlisting}
 
 \subsection{考察}
+式\ref{eq:kadai1}の解析解は、式\ref{eq:kaiseki1}のようになる。
+
+\begin{align}
+  \int_0^\frac{\pi}{6} \frac{dx}{\cos x} &= \left[ \frac{1}{2} \log \left( \frac{1 + \sin x}{1 - \sin x} \right) \right]_0^\frac{\pi}{6} \nonumber \\
+  &= \frac{1}{2} \log 3
+  \label{eq:kaiseki1}
+\end{align}
+
+リスト\ref{lst:kekka1}を見ると、$n$が大きくなるにつれ、数値解と解析解の差が少なくなっていることが分かる。
+具体的には、分割数が2倍になると、誤差は約$1/4$になっていることが分かる。
 
 
 \section{課題2 : シンプソンの公式}
@@ -172,13 +182,67 @@ n = 32, S = 1.0000001192092896, e = 0.0000001192092896
 \end{lstlisting}
 
 \subsection{考察}
+式\ref{eq:kadai2}の解析解は、式\ref{eq:kaiseki2}のようになる。
+
+\begin{align}
+  \int_0^\frac{\pi}{2} \sin x dx &= \left[ -\cos(x) \right]_0^\frac{\pi}{2} \nonumber \\
+  &= 1
+  \label{eq:kaiseki2}
+\end{align}
+
+リスト\ref{lst:kekka2-d}を見ると、$n$が大きくなるにつれ、数値解と解析解の差が少なくなっていることが分かる。
+具体的には、分割数が2倍になると、誤差は約$1/16$になっていることが分かる。
+
+また、リスト\ref{lst:kekka2-d}とリスト\ref{lst:kekka2-f}比べると、float型で計算を行ったときの方が誤差が大きくなっていることが分かる。
+特に、$n=32$の場合を比較すると、float型の誤差はdouble型に比べて約4倍と、非常に大きな差が生まれている。
 
 
 \section{課題3--5 : 常微分方程式}
 \subsection{課題内容}
+式\ref{eq:kadai3}をオイラー法、ホイン法、ルンゲ・クッタ法を用いて解く。
+ただし、$t = 0$のとき$u = 1$とする。
+
+\begin{equation}
+  \frac{du}{dt} = u
+  \label{eq:kadai3}
+\end{equation}
+
 
 \subsection{プログラムリスト}
 課題3のプログラムリストをリスト\ref{lst:kadai3}に示す。
+
+オイラー法は式\ref{eq:euler}, ホイン法は式\ref{eq:heun}, ルンゲ・クッタ法は式\ref{eq:runge}のように表せる。
+これらの計算を、それぞれ\texttt{euler}, \texttt{heun}, \texttt{runge\_kutta}関数内で行うことで、解を導出している。
+
+\begin{equation}
+  \begin{aligned}
+    x_{i+1} &= x_i + h \\
+    y_{i+1} &= y_i + h f(x_i, \, y_i)
+  \end{aligned}
+  \label{eq:euler}
+\end{equation}
+
+\begin{equation}
+  \begin{aligned}
+    x_{i+1} &= x_i + h \\
+    k_1 &= h f(x_i, \, y_i) \\
+    k_2 &= h f(x_i + h, \, y_i + k_1) \\
+    y_{i+1} &= y_i + \frac{1}{2} (k_1 + k_2)
+  \end{aligned}
+  \label{eq:heun}
+\end{equation}
+
+\begin{equation}
+  \begin{aligned}
+    x_{i+1} &= x_i + h \\
+    k_1 &= h f(x_i, \, y_i) \\
+    k_2 &= h f(x_i + \frac{h}{2}, \, y_i + \frac{k_1}{2}) \\
+    k_3 &= h f(x_i + \frac{h}{2}, \, y_i + \frac{k_2}{2}) \\
+    k_4 &= h f(x_i + h, \, y_i + k_3) \\
+    y_{i+1} &= y_i + \frac{1}{6} (k_1 + 2 k_2 + 2 k_3 + k_4)
+  \end{aligned}
+  \label{eq:runge}
+\end{equation}
 
 \lstinputlisting[style=C,caption=課題3--5のプログラム,label=lst:kadai3]{code/kadai03-3.c}
 
@@ -225,6 +289,10 @@ i = 10, t = 0.9999999999999999, u = 2.7182797441351658, e = -0.0000020843238793
 \end{lstlisting}
 
 \subsection{考察}
+リスト\ref{lst:kadai3}の3つの手法の実行結果を見比べると、オイラー法よりホイン法、ホイン法よりルンゲ・クッタ法の方が誤差が少ないことが分かる。
+これは$i$が大きくなるにつれて顕著に現れる。
+
+
 
 
 \begin{comment}

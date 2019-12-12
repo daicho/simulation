@@ -20,21 +20,21 @@ int main(void) {
 
     printf("オイラー法\n");
     for (i = 0; i <= STEP; i++)
-        printf("i = %2d, t = %2.16f, u = %2.16f, e = %2.16f\n", i, t[i], u[i], u[i] - us(t[i]));
+        printf("i = %2d, t = %.16f, u = %.16f, e = %.16f\n", i, t[i], u[i], u[i] - us(t[i]));
 	printf("\n");
 
 	heun(t, u, 0.1, STEP);
 
     printf("ホイン法\n");
     for (i = 0; i <= STEP; i++)
-        printf("i = %2d, t = %2.16f, u = %2.16f, e = %2.16f\n", i, t[i], u[i], u[i] - us(t[i]));
+        printf("i = %2d, t = %.16f, u = %.16f, e = %.16f\n", i, t[i], u[i], u[i] - us(t[i]));
 	printf("\n");
 
 	runge_kutta(t, u, 0.1, STEP);
 
     printf("ルンゲ・クッタ法\n");
     for (i = 0; i <= STEP; i++)
-        printf("i = %2d, t = %2.16f, u = %2.16f, e = %2.16f\n", i, t[i], u[i], u[i] - us(t[i]));
+        printf("i = %2d, t = %.16f, u = %.16f, e = %.16f\n", i, t[i], u[i], u[i] - us(t[i]));
 
     return 0;
 }

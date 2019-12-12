@@ -3,9 +3,9 @@
 
 #define a 0.0
 #define b (M_PI / 2)
+#define SOLUTION 1
 
 float f(float);
-float sol();
 float simpson(int);
 
 int main(void) {
@@ -13,7 +13,7 @@ int main(void) {
 
     for (i = 2; i <= 32; i *= 2) {
         float S = simpson(i);
-        printf("n = %2d, S = %2.16f, e = %2.16f\n", i, S, S - sol());
+        printf("n = %2d, S = %.16f, e = %.16f\n", i, S, S - SOLUTION);
     }
 
     return 0;
@@ -22,11 +22,6 @@ int main(void) {
 // f(x)
 float f(float x) {
     return sin(x);
-}
-
-// ‰ðÍ‰ð
-float sol() {
-    return 1;
 }
 
 // ƒVƒ“ƒvƒ\ƒ“‚ÌŒöŽ®
