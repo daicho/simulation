@@ -3,6 +3,7 @@
 
 #define t0 0.0
 #define u0 1.0
+#define H 0.1
 #define STEP 10
 
 double up(double, double);
@@ -16,21 +17,21 @@ int main(void) {
     double t[STEP + 1];
     double u[STEP + 1];
 
-	euler(t, u, 0.1, STEP);
+	euler(t, u, H, STEP);
 
     printf("オイラー法\n");
     for (i = 0; i <= STEP; i++)
         printf("i = %2d, t = %.16f, u = %.16f, e = %.16f\n", i, t[i], u[i], u[i] - us(t[i]));
 	printf("\n");
 
-	heun(t, u, 0.1, STEP);
+	heun(t, u, H, STEP);
 
     printf("ホイン法\n");
     for (i = 0; i <= STEP; i++)
         printf("i = %2d, t = %.16f, u = %.16f, e = %.16f\n", i, t[i], u[i], u[i] - us(t[i]));
 	printf("\n");
 
-	runge_kutta(t, u, 0.1, STEP);
+	runge_kutta(t, u, H, STEP);
 
     printf("ルンゲ・クッタ法\n");
     for (i = 0; i <= STEP; i++)
