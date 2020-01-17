@@ -28,9 +28,9 @@ int main(void) {
     double ratio;
 
     double X[N][N + 1] = {
-        {2, 2, 6,  24},
-        {3, 5, 13, 52},
-        {5, 8, 24, 93}
+        {-2, 2, 0,  0},
+        {3, -3, 1, 1},
+    	{2, 1, 6, 9}
     };
 
     dispMatrix(X);
@@ -39,6 +39,17 @@ int main(void) {
 	// 前進代入
     for (i = 0; i < N; i++) {
         double temp;
+
+		// ピポット選択
+		for (j = i; j < N; j++) {
+			if (X[j][i] > X[i][i]) {
+				for (k = 0; k < N + 1; k++) {
+					temp = X[i][k];
+					X[i][k] = X[j][k];
+					X[j][k] = temp;
+				}
+			}
+		}
 
         temp = X[i][i];
         for (j = 0; j < N + 1; j++)
