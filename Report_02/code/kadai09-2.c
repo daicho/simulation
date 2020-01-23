@@ -3,10 +3,10 @@
 
 #define qB_m 2
 #define t_0 0
-#define x_0 0
+#define x_0 0.1
 #define y_0 0
 #define vx_0 1
-#define vy_0 1
+#define vy_0 0.1
 
 #define H 0.01
 #define STEP 100
@@ -28,7 +28,7 @@ int main(void) {
 	heun(t, x, y, vx, vy, H, STEP);
 
     for (i = 0; i <= STEP; i++) {
-        printf("i = %2d, t = %.16f, x = %.16f, y = %.16f, vx = %.16f, vy = %.16f\n", i, t[i], x[i], y[i], vx[i], vy[i]);
+        printf("t = %.2f, x = %.6f, y = %.6f, vx = %.6f, vy = %.6f\n", t[i], x[i], y[i], vx[i], vy[i]);
     }
 
     return 0;

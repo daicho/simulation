@@ -8,8 +8,8 @@
 #define Q_0 10
 #define I_0 0
 
-#define H 0.1
-#define STEP 10
+#define H 0.01
+#define STEP 100
 
 double Qp(double);
 double Ip(double, double);

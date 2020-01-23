@@ -1,14 +1,14 @@
 #include <stdio.h>
 #include <math.h>
 
-#define qE 2
-#define qB_m 2
+#define qE 1
+#define qB_m 1
 #define t_0 0
-#define x_0 0
+#define x_0 0.1
 #define y_0 0
 #define z_0 0
 #define vx_0 1
-#define vy_0 1
+#define vy_0 0.1
 #define vz_0 1
 
 #define H 0.01
@@ -33,7 +33,7 @@ int main(void) {
 	heun(t, x, y, z, vx, vy, vz, H, STEP);
 
     for (i = 0; i <= STEP; i++) {
-        printf("i = %2d, t = %.16f, x = %.16f, y = %.16f, z = %.16f, vx = %.16f, vy = %.16f, vz = %.16f\n", i, t[i], x[i], y[i], z[i], vx[i], vy[i], vz[i]);
+        printf("t = %.2f, x = (%.6f, %.6f, %.6f), v = (%.6f, %.6f, %.6f)\n", t[i], x[i], y[i], z[i], vx[i], vy[i], vz[i]);
     }
 
     return 0;
@@ -56,7 +56,7 @@ double zp(double vz) {
 
 // vx'(vy)
 double vxp(double vy) {
-	return qB_m * vy;
+	return vy;
 }
 
 // vy'(vx)

@@ -1,15 +1,15 @@
 #include <stdio.h>
 #include <math.h>
 
-#define l 3
-#define k 2
+#define l 0
+#define k 1
 #define m 1
 #define t_0 0
 #define y_0 10
 #define v_0 0
 
-#define H 0.1
-#define STEP 10
+#define H 0.01
+#define STEP 100
 
 double yp(double);
 double vp(double, double);
