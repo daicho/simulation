@@ -36,7 +36,7 @@ int main(void) {
     dispMatrix(X);
     printf("\n");
 
-	// 前進代入
+	// 前進消去
     for (i = 0; i < N; i++) {
         double temp;
 
@@ -62,6 +62,7 @@ int main(void) {
         }
     }
 
+    printf("前進消去\n");
     dispMatrix(X);
     printf("\n");
 
@@ -73,6 +74,7 @@ int main(void) {
         }
     }
 
+    printf("後退代入\n");
     dispMatrix(X);
 
     return 0;
