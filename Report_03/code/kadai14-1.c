@@ -7,25 +7,21 @@
 #define L 1.0
 #define N 100
 
-double average(double *a) {
+double variace(double *);
+void quadratic(double[N], double[N], double *, double *, double *);
+void gauss(double[3][4]);
+
+double variance(double *x) {
     int i;
     double sum = 0;
+    double ave = 0;
 
     for (i = 1; i <= N; i++)
-        sum += a[i];
-
-    return sum / N;
-}
-
-double bunsan(double *x, double *y) {
-    int i;
-    double sum = 0;
-    double ave_x = average(x);
-    double ave_y = average(y);
+        ave += x[i];
+    ave /= N;
 
     for (i = 1; i <= N; i++)
-        sum += (x[i] - ave_x) * (y[i] - ave_y);
-
+        sum += pow((x[i] - ave), 2);
     return sum / N;
 }
 
@@ -43,7 +39,7 @@ int main(void) {
     }
     
     printf("x = %.1f\n", x[N]);
-    printf("分散 = %.2f\n", bunsan(x, x));
+    printf("V = %.2f\n", variance(x));
 
     return 0;
 }
