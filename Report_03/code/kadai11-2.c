@@ -28,7 +28,6 @@ int main(void) {
 // ガウスの消去法
 void gauss(double X[N][N + 1]) {
     int i, j, k;
-    double ratio;
 
     // 前進消去
     for (i = 0; i < N; i++) {

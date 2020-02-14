@@ -15,17 +15,17 @@ void dispMatrix(double A[N][N + 1]) {
     int i, j;
 
     for (i = 0; i < N; i++) {
-        for (j = 0; j < N + 1; j++)
+        for (j = 0; j < N + 1; j++) {
             if (j != N)
                 printf("%6.2f ", A[i][j]);
             else
                 printf("| %6.2f\n", A[i][j]);
+        }
     }
 }
 
 int main(void) {
     int i, j, k;
-    double ratio;
 
     double X[N][N + 1] = {
         {2, 2, 6,  24},

@@ -53,7 +53,6 @@ void quadratic(double x[N], double y[N], double *a, double *b, double *c) {
 // ガウスの消去法
 void gauss(double X[3][4]) {
     int i, j, k;
-    double ratio;
 
     // 前進消去
     for (i = 0; i < 3; i++) {
