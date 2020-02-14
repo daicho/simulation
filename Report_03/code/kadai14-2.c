@@ -4,7 +4,7 @@
 #include <time.h>
 
 #define N    200
-#define STEP 1000
+#define STEP 100
 #define P_x  0.5
 #define P_y  0.5
 #define L    1.0
@@ -20,7 +20,7 @@ int main(void) {
 
     for (i = 0; i < N; i++) {
         random_walk(&x[i], &y[i], STEP, P_x, P_y, L);
-        printf("(%11f, %11f)\n", x[i], y[i]);
+        printf("(x, y) = (%6.2f, %6.2f)\n", x[i], y[i]);
     }
 
     return 0;
