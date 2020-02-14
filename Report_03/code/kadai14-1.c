@@ -6,6 +6,7 @@
 #define PLOT_N   50
 #define DATA_N   100
 #define STEP_MAX 5000
+
 #define P 0.5
 #define L 1.0
 
@@ -47,7 +48,7 @@ int main(void) {
 
     // 結果を出力
     for (i = 0; i < PLOT_N; i++)
-        printf("V(%4d) = %f\n", n[i], V[i]);
+        printf("(n, V) = (%4d, %11f)\n", n[i], V[i]);
     printf("\n");
 
     // 最小二乗法

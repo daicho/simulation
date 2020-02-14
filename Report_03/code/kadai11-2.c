@@ -16,9 +16,6 @@ int main(void) {
         {1, 1, 6, 1, 9.0}
     };
 
-    dispMatrix(X);
-    printf("\n");
-
     gauss(X);
     dispMatrix(X);
 
